@@ -12,7 +12,7 @@ clients description
 
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
-| `id` | INT | Not null, Unique |   |   |
+| `id` | INT | PRIMARY, Not null, Unique |   |   |
 | `first_name` | VARCHAR(50) | Not null |   |   |
 | `middle_name` | VARCHAR(50) | Not null |   |   |
 | `last_name` | VARCHAR(50) | Not null |   |   |
@@ -26,6 +26,7 @@ clients description
 
 | Name | Columns | Type | Description |
 | --- | --- | --- | --- |
+| PRIMARY | `id` | PRIMARY |   |
 | id_UNIQUE | `id` | UNIQUE |   |
 | lastn_index | `last_name` | INDEX | 'index on last name' |
 | email_index | `email` | INDEX |   |
@@ -42,7 +43,7 @@ tours for sale
 
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
-| `id` | INT | Not null, Unique |   |  **foreign key** to column `id` on table `tours`. |
+| `id` | INT | PRIMARY, Not null, Unique |   |  **foreign key** to column `id` on table `tours`. |
 | `route` | VARCHAR(50) | Not null |   |   |
 | `days` | INT | Not null |   |   |
 | `hotel` | VARCHAR(150) | Not null |   |   |
@@ -56,6 +57,7 @@ tours for sale
 
 | Name | Columns | Type | Description |
 | --- | --- | --- | --- |
+| PRIMARY | `id` | PRIMARY |   |
 | id_UNIQUE | `id` | UNIQUE |   |
 
 
@@ -69,7 +71,7 @@ tours for sale
 
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
-| `id` | INT | Not null, Unique |   |   |
+| `id` | INT | PRIMARY, Not null, Unique |   |   |
 | `name` | VARCHAR(50) | Not null |   |   |
 | `days` | INT | Not null |   |   |
 | `price` | DECIMAL | Not null |   |   |
@@ -83,6 +85,7 @@ tours for sale
 
 | Name | Columns | Type | Description |
 | --- | --- | --- | --- |
+| PRIMARY | `id` | PRIMARY |   |
 | id_UNIQUE | `id` | UNIQUE |   |
 | worker_to_worker_id_idx | `worker` | INDEX |   |
 | transp_to_transp_id_idx | `transport` | INDEX |   |
@@ -98,7 +101,7 @@ tours for sale
 
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
-| `id` | INT | Not null, Unique |   |  **foreign key** to column `id` on table `events`. |
+| `id` | INT | PRIMARY, Not null, Unique |   |  **foreign key** to column `id` on table `events`. |
 | `h_name` | VARCHAR(150) | Not null |   |   |
 | `price` | INT | Not null |   |   |
 | `description` | VARCHAR(500) | Not null |   |   |
@@ -108,6 +111,7 @@ tours for sale
 
 | Name | Columns | Type | Description |
 | --- | --- | --- | --- |
+| PRIMARY | `id` | PRIMARY |   |
 | id_UNIQUE | `id` | UNIQUE |   |
 | h_name_index | `h_name` | INDEX |   |
 | desc_index | `description` | FULLTEXT |   |
@@ -123,7 +127,7 @@ Order list
 
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
-| `id` | INT | Not null, Unique |   |  **foreign key** to column `id` on table `clients`. |
+| `id` | INT | PRIMARY, Not null, Unique |   |  **foreign key** to column `id` on table `clients`. |
 | `payment_state` | TINYINT | Not null |   |   |
 | `order_date` | DATE | Not null |   |   |
 | `tours` | INT |  | `NULL` |  **foreign key** to column `id` on table `tours`. |
@@ -135,6 +139,7 @@ Order list
 
 | Name | Columns | Type | Description |
 | --- | --- | --- | --- |
+| PRIMARY | `id` | PRIMARY |   |
 | id_UNIQUE | `id` | UNIQUE |   |
 | order_to_tours_id_idx | `tours` | INDEX |   |
 | event_to event_id_idx | `events` | INDEX |   |
@@ -150,7 +155,7 @@ transport tickets
 
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
-| `id` | INT | Not null, Unique |   |   |
+| `id` | INT | PRIMARY, Not null, Unique |   |   |
 | `ticket_name` | VARCHAR(100) | Not null |   |   |
 | `destination` | VARCHAR(100) | Not null |   |   |
 | `departure_from` | VARCHAR(100) |  | `NULL` | The name of the place of departure |
@@ -161,6 +166,7 @@ transport tickets
 
 | Name | Columns | Type | Description |
 | --- | --- | --- | --- |
+| PRIMARY | `id` | PRIMARY |   |
 | id_UNIQUE | `id` | UNIQUE |   |
 | name_index | `ticket_name` | INDEX |   |
 | from_index | `departure_from` | INDEX |   |
@@ -211,7 +217,7 @@ company transport
 
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
-| `id` | INT | Not null, Unique |   |   |
+| `id` | INT | PRIMARY, Not null, Unique |   |   |
 | `name` | VARCHAR(45) | Not null |   |   |
 | `people` | VARCHAR(45) | Not null |   | capacity of people |
 | `type` | VARCHAR(45) | Not null |   | vehicle type |
@@ -222,6 +228,7 @@ company transport
 
 | Name | Columns | Type | Description |
 | --- | --- | --- | --- |
+| PRIMARY | `id` | PRIMARY |   |
 | id_UNIQUE | `id` | UNIQUE |   |
 
 
@@ -235,7 +242,7 @@ Employee data
 
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
-| `id` | INT | Not null, Unique |   |   |
+| `id` | INT | PRIMARY, Not null, Unique |   |   |
 | `first_name` | VARCHAR(50) | Not null |   |   |
 | `last_name` | VARCHAR(50) | Not null |   |   |
 | `middle_name` | VARCHAR(50) |  | `NULL` |   |
@@ -249,6 +256,7 @@ Employee data
 
 | Name | Columns | Type | Description |
 | --- | --- | --- | --- |
+| PRIMARY | `id` | PRIMARY |   |
 | id_UNIQUE | `id` | UNIQUE |   |
 
 
