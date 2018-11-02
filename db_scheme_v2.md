@@ -71,7 +71,7 @@ tours for sale
 
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
-| `id` | INT | PRIMARY, Not null, Unique |   |   |
+| `id` | INT | PRIMARY, Not null, Unique |   |  **foreign key** to column `id` on table `tickets`. |
 | `name` | VARCHAR(50) | Not null |   |   |
 | `days` | INT | Not null |   |   |
 | `price` | DECIMAL | Not null |   |   |
@@ -79,6 +79,7 @@ tours for sale
 | `transport` | INT |  | `NULL` | Necessary transport<br /><br />**foreign key** to column `id` on table `transport`. |
 | `hotels` | INT | Not null |   | Is accommodation required |
 | `description` | VARCHAR(500) | Not null |   | Event description |
+| `ticket` | INT |  | `NULL` |   |
 
 
 ### Indices: 
