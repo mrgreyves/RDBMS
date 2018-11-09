@@ -18,8 +18,11 @@ clients description
 | `last_name` | VARCHAR(50) | Not null |   |   |
 | `phone` | VARCHAR(50) | Not null |   |   |
 | `email` | VARCHAR(50) | Not null |   |   |
-| `passport` | VARCHAR(500) | Not null |   |   |
 | `description` | VARCHAR(500) |  | `NULL` |   |
+| `p_series` | INT | Not null |   | Passport Series |
+| `p_number` | INT |  | `NULL` | Passport number |
+| `p_issued_by` | VARCHAR(500) | Not null |   | Passport issued by |
+| `p_registration` | VARCHAR(500) |  | `NULL` | Place of registration |
 
 
 ### Indices: 
@@ -44,7 +47,7 @@ tours for sale
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
 | `id` | INT | PRIMARY, Not null, Unique |   |  **foreign key** to column `id` on table `tours`. |
-| `route` | VARCHAR(50) | Not null |   |   |
+| `route` | VARCHAR(50) | Not null |   | Direction of the tour (Eroupe, Asia, South-North Amarica, etc.) |
 | `days` | INT | Not null |   |   |
 | `hotel` | VARCHAR(150) | Not null |   |   |
 | `h_num` | INT | Not null |   | number of people\n |
@@ -159,8 +162,9 @@ transport tickets
 | `id` | INT | PRIMARY, Not null, Unique |   |   |
 | `ticket_name` | VARCHAR(100) | Not null |   |   |
 | `destination` | VARCHAR(100) | Not null |   |   |
-| `departure_from` | VARCHAR(100) |  | `NULL` | The name of the place of departure |
-| `discription` | VARCHAR(1000) |  | `NULL` | Ticket discription |
+| `departure_from` | VARCHAR(100) | Not null |   | The name of the place of departure |
+| `description` | VARCHAR(1000) |  | `NULL` | Ticket description |
+| `arrival_date` | DATE | Not null |   | Departure date |
 
 
 ### Indices: 
@@ -172,7 +176,7 @@ transport tickets
 | name_index | `ticket_name` | INDEX |   |
 | from_index | `departure_from` | INDEX |   |
 | dest_index | `destination` | INDEX |   |
-| disc_index | `discription` | FULLTEXT |   |
+| disc_index | `description` | FULLTEXT |   |
 
 
 ## Table: `tours`
@@ -186,14 +190,14 @@ Tours provided by the organization
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
 | `id` | INT | Not null, Unique |   |   |
-| `route` | VARCHAR(45) | Not null |   | Direction of the tour |
+| `route` | VARCHAR(45) | Not null |   | Direction of the tour (Eroupe, Asia, South-North Amarica, etc.) |
 | `days` | INT | Not null |   |   |
 | `hotel` | VARCHAR(150) | Not null |   | Hotel description |
 | `h_num` | INT | Not null |   | number of people |
 | `tour_name` | VARCHAR(150) | Not null |   |   |
-| `day_to_start` | INT | Not null |   | Number of days before the start of the tour |
 | `price` | DECIMAL | Not null |   |   |
 | `description` | VARCHAR(500) | Not null |   | Short description\n |
+| `t_start_dat` | DATE | Not null |   | Tour start date |
 
 
 ### Indices: 
@@ -220,7 +224,7 @@ company transport
 | --- | --- | --- | --- | ---  |
 | `id` | INT | PRIMARY, Not null, Unique |   |   |
 | `name` | VARCHAR(45) | Not null |   |   |
-| `people` | VARCHAR(45) | Not null |   | capacity of people |
+| `people` | INT | Not null |   | capacity of people |
 | `type` | VARCHAR(45) | Not null |   | vehicle type |
 | `status` | VARCHAR(45) | Not null |   | vehicle status (available, repair, etc) |
 
@@ -247,7 +251,7 @@ Employee data
 | `first_name` | VARCHAR(50) | Not null |   |   |
 | `last_name` | VARCHAR(50) | Not null |   |   |
 | `middle_name` | VARCHAR(50) |  | `NULL` |   |
-| `age` | INT | Not null |   |   |
+| `d_o_b` | INT | Not null |   | Date of Birth |
 | `price_at_month` | DECIMAL | Not null |   |   |
 | `price_at_day` | DECIMAL | Not null |   |   |
 | `price_at_event` | DECIMAL | Not null |   |   |
