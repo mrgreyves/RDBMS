@@ -77,7 +77,7 @@ tours for sale
 | `id` | INT | PRIMARY, Not null, Unique |   |  **foreign key** to column `id` on table `tickets`. |
 | `name` | VARCHAR(50) | Not null |   |   |
 | `days` | INT | Not null |   |   |
-| `price` | DECIMAL | Not null |   |   |
+| `price` | DECIMAL(9,2) | Not null |   |   |
 | `worker` | INT | Not null |   | Employee name<br /><br />**foreign key** to column `id` on table `worker`. |
 | `transport` | INT |  | `NULL` | Necessary transport<br /><br />**foreign key** to column `id` on table `transport`. |
 | `hotels` | INT | Not null |   | Is accommodation required |
@@ -195,7 +195,7 @@ Tours provided by the organization
 | `hotel` | VARCHAR(150) | Not null |   | Hotel description |
 | `h_num` | INT | Not null |   | number of people |
 | `tour_name` | VARCHAR(150) | Not null |   |   |
-| `price` | DECIMAL | Not null |   |   |
+| `price` | DECIMAL(9,2) | Not null |   |   |
 | `description` | VARCHAR(500) | Not null |   | Short description\n |
 | `t_start_dat` | DATE | Not null |   | Tour start date |
 
@@ -252,9 +252,9 @@ Employee data
 | `last_name` | VARCHAR(50) | Not null |   |   |
 | `middle_name` | VARCHAR(50) |  | `NULL` |   |
 | `d_o_b` | INT | Not null |   | Date of Birth |
-| `price_at_month` | DECIMAL | Not null |   |   |
-| `price_at_day` | DECIMAL | Not null |   |   |
-| `price_at_event` | DECIMAL | Not null |   |   |
+| `price_at_month` | DECIMAL(6,2) | Not null |   |   |
+| `price_at_day` | DECIMAL(6,2) | Not null |   |   |
+| `price_at_event` | DECIMAL(6,2) | Not null |   |   |
 
 
 ### Indices: 
