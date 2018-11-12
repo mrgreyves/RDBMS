@@ -190,7 +190,7 @@ Tours provided by the organization
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
 | `id` | INT | Not null, Unique |   |   |
-| `route` | VARCHAR(45) | Not null |   | Direction of the tour (Eroupe, Asia, South-North Amarica, etc.) |
+| `route` | VARCHAR(50) | Not null |   | Direction of the tour (Eroupe, Asia, South-North Amarica, etc.) |
 | `days` | INT | Not null |   |   |
 | `hotel` | VARCHAR(150) | Not null |   | Hotel description |
 | `h_num` | INT | Not null |   | number of people |
@@ -222,10 +222,10 @@ company transport
 | Column | Data type | Attributes | Default | Description |
 | --- | --- | --- | --- | ---  |
 | `id` | INT | PRIMARY, Not null, Unique |   |   |
-| `name` | VARCHAR(45) | Not null |   |   |
+| `name` | VARCHAR(50) | Not null |   |   |
 | `people` | INT | Not null |   | capacity of people |
-| `type` | VARCHAR(45) | Not null |   | vehicle type |
-| `status` | VARCHAR(45) | Not null |   | vehicle status (available, repair, etc) |
+| `type` | VARCHAR(50) | Not null |   | vehicle type |
+| `status` | VARCHAR(50) | Not null |   | vehicle status (available, repair, etc) |
 
 
 ### Indices: 
