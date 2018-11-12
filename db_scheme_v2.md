@@ -207,7 +207,6 @@ Tours provided by the organization
 | id_UNIQUE | `id` | UNIQUE |   |
 | route_index | `route` | INDEX |   |
 | tourn_index | `tour_name` | INDEX |   |
-| hotel_index | `hotel` | INDEX |   |
 | desc_index | `description` | FULLTEXT |   |
 
 
