@@ -20,7 +20,7 @@ clients description
 | `email` | VARCHAR(50) | Not null |   |   |
 | `description` | VARCHAR(500) |  | `NULL` |   |
 | `p_series` | INT | Not null |   | Passport Series |
-| `p_number` | INT |  | `NULL` | Passport number |
+| `p_number` | INT | Not null |   | Passport number |
 | `p_issued_by` | VARCHAR(500) | Not null |   | Passport issued by |
 | `p_registration` | VARCHAR(500) |  | `NULL` | Place of registration |
 
@@ -53,7 +53,7 @@ tours for sale
 | `h_num` | INT | Not null |   | number of people\n |
 | `tour_name` | VARCHAR(150) | Not null |   |   |
 | `day_to_start` | INT | Not null |   |   |
-| `disc_price` | INT | Not null |   | discount price |
+| `disc_price` | DECIMAL(9,2) | Not null |   | discount price |
 
 
 ### Indices: 
@@ -107,7 +107,7 @@ tours for sale
 | --- | --- | --- | --- | ---  |
 | `id` | INT | PRIMARY, Not null, Unique |   |  **foreign key** to column `id` on table `events`. |
 | `h_name` | VARCHAR(150) | Not null |   |   |
-| `price` | INT | Not null |   |   |
+| `price` | DECIMAL(9,2) | Not null |   |   |
 | `description` | VARCHAR(500) | Not null |   |   |
 
 
@@ -207,7 +207,6 @@ Tours provided by the organization
 | id_UNIQUE | `id` | UNIQUE |   |
 | route_index | `route` | INDEX |   |
 | tourn_index | `tour_name` | INDEX |   |
-| hnum_index | `h_num` | INDEX |   |
 | hotel_index | `hotel` | INDEX |   |
 | desc_index | `description` | FULLTEXT |   |
 
@@ -251,10 +250,10 @@ Employee data
 | `first_name` | VARCHAR(50) | Not null |   |   |
 | `last_name` | VARCHAR(50) | Not null |   |   |
 | `middle_name` | VARCHAR(50) |  | `NULL` |   |
-| `d_o_b` | INT | Not null |   | Date of Birth |
-| `price_at_month` | DECIMAL(6,2) | Not null |   |   |
-| `price_at_day` | DECIMAL(6,2) | Not null |   |   |
-| `price_at_event` | DECIMAL(6,2) | Not null |   |   |
+| `d_o_b` | DATE | Not null |   | Date of Birth |
+| `price_at_month` | DECIMAL(9,2) | Not null |   |   |
+| `price_at_day` | DECIMAL(9,2) | Not null |   |   |
+| `price_at_event` | DECIMAL(9,2) | Not null |   |   |
 
 
 ### Indices: 
