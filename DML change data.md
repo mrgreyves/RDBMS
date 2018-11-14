@@ -1,11 +1,11 @@
-###Вставка данных в таблицу
+### Вставка данных в таблицу
 
 ```
 INSERT INTO clients (id, first_name, middle_name, last_name,phone,email,description,p_series,p_number,p_issued_by,p_registration)
 VALUES (1, "Василий", "Иванович", "Пупкин", "88005553535", "not@emai.com", "", "4444","555555", 12-05-1978, "Address")
 ```
 
-###Вставка данных в таблицу с использование SELECT
+### Вставка данных в таблицу с использование SELECT
 Пример из официальный документации.
 Можно использовать для вставки данных из одной таблицы в другую.
 
@@ -15,26 +15,26 @@ INSERT INTO tbl_temp2 (fld_id)
   FROM tbl_temp1 WHERE tbl_temp1.fld_order_id > 100;
 ```
 
-###Изменение данных UPDATE
+### Изменение данных UPDATE
 
 ```
 UPDATE clients SET email="second@emal.adr" WHERE id=1;
 ```
 
-###Изменение данных UPDATE с JOIN
+### Изменение данных UPDATE с JOIN
 Джойним таблицы cliets и clients2 по id. И обновляем поля.
 
 ```
 UPDATE clients c join clients2 c2 ON c.id = c2.id SET c.phone = i.phone, c.email = c2.email, c.p_registration = c2.p_registration;
 ```
 
-###Удаление данных DELETE. Удаляем по условию.
+### Удаление данных DELETE. Удаляем по условию.
 
 ```
 DELETE FROM clients WHERE id=1;
 ```
 
-###Слияние Merge
+### Слияние Merge
 Возможно в MySQL при использовании движка MYISAM.
 Создаем 2 одинаковых таблицы(t1,t2). Сливаем их в таблицу total. 
 Данный метод не очень хорош, так как "сливает" данные как есть.  
